@@ -27,9 +27,10 @@ public class BankHttpServer {
 	}
 
 	public static void main(String[] args) throws IOException {
-		BankHttpServer app = new BankHttpServer(8080);
+		String portValue = System.getenv().getOrDefault("PORT", "8080");
+		BankHttpServer app = new BankHttpServer(Integer.parseInt(portValue));
 		app.start();
-		System.out.println("Bank API running at http://localhost:8080");
+		System.out.println("Bank API running on port " + portValue);
 	}
 
 	public void start() {
