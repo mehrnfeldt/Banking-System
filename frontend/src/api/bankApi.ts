@@ -22,8 +22,10 @@ export type BankState = {
   invalidCommands: string[];
 };
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? '';
+
 export async function getBankState(): Promise<BankState> {
-  const response = await fetch('/api/state');
+  const response = await fetch(`${API_BASE_URL}/api/state`);
 
   if (!response.ok) {
     throw new Error('Unable to load bank state');
@@ -33,7 +35,7 @@ export async function getBankState(): Promise<BankState> {
 }
 
 export async function runCommand(command: string): Promise<CommandResponse> {
-  const response = await fetch('/api/commands', {
+  const response = await fetch(`${API_BASE_URL}/api/commands`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
