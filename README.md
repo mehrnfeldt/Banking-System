@@ -1,18 +1,95 @@
-## Getting Started
+📘 Banking System — Java Backend + Frontend UI
+A Java-based banking system that simulates real financial operations including account creation, deposits, withdrawals, transfers, and transaction tracking.
+The project includes:
+A Java backend (HTTP server)
+A frontend UI (TypeScript + HTML/CSS)
+A Dockerfile for deployment
+A live deployment on Render + Netlify
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+🚀 Features
+🏦 Core Banking Operations
+Create new accounts
+Deposit funds
+Withdraw funds
+Transfer between accounts
+View transaction history
+Persistent state storage (via backend state file)
 
-## Folder Structure
+🌐 Backend API
+Lightweight Java HTTP server
+REST-style endpoints
+JSON request/response format
+Deployed on Render
 
-The workspace contains two folders by default, where:
+💻 Frontend
+Clean UI for interacting with the banking system
+Fetches data from the deployed backend
+Deployed on Netlify
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+📂 Project Structure
+Code
+Banking-System/
+│
+├── backend/           # Java backend logic
+├── frontend/          # UI (TypeScript, HTML, CSS)
+├── src/               # Java source (VS Code Java workspace)
+├── test/              # Placeholder for JUnit tests
+├── Dockerfile         # Backend deployment container
+└── README.md          # Project documentation
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+🔌 API Endpoints
+GET /api/accounts
+Returns all accounts and balances.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+POST /api/accounts
+Creates a new account.
 
-## Dependency Management
+POST /api/deposit
+Deposits money into an account.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+POST /api/withdraw
+Withdraws money from an account.
+
+POST /api/transfer
+Transfers funds between accounts.
+
+GET /api/state
+Returns full backend state (accounts + transactions).
+
+🐳 Running with Docker
+Build the image
+Code
+docker build -t banking-system .
+Run the container
+Code
+docker run -p 8080:8080 banking-system
+Backend will be available at:
+Code
+http://localhost:8080
+
+🧪 Running Locally (Java)
+Compile
+Code
+javac -d bin src/**/*.java
+Run
+Code
+java -cp bin BankHttpServer
+
+🌍 Live Deployments
+Backend (Render)
+https://banking-system-b2ed.onrender.com/api/state
+Frontend (Netlify)
+https://mybanksystem1.netlify.app
+
+🛠️ Technologies Used
+Java 17
+TypeScript
+HTML/CSS
+Docker
+Render (backend hosting)
+Netlify (frontend hosting)
+
+👩‍💻 Author
+Megan Ehrnfeldt  
+GitHub: https://github.com/mehrnfeldt  
+Portfolio: https://mehrnfeldt.github.io/portfolio
